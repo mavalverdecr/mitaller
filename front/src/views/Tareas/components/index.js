@@ -1,0 +1,1 @@
+export { default as TarjetaTarea } from './TarjetaTarea'

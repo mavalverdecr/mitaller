@@ -1,0 +1,63 @@
+export default {
+    title: 'Nuevo Cliente',
+    route: '/clientes',
+    fields: [
+        {
+            name: 'dni',
+            type: 'text',
+            label: 'DNI *',
+            validate: new RegExp(/^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/),
+            required: true,
+            error: false,
+            mensaje: '',
+            value: '',
+        },
+        {
+            name: 'nombre',
+            type: 'text',
+            label: 'Nombre *',
+            validate: new RegExp(/^([A-Za-zÑñÁÉÍÓÚáéíóú]+[ ]?){1,2}$/),
+            required: true,
+            error: false,
+            mensaje: '',
+            value: '',
+        },
+        {
+            name: 'apellidos',
+            type: 'text',
+            label: 'Apellidos *',
+            validate: new RegExp(/^([A-Za-zÑñÁÉÍÓÚáéíóú]+[ ]?){1,2}$/),
+            required: true,
+            error: false,
+            mensaje: '',
+            value: '',
+        },
+        {
+            name: 'telefono',
+            type: 'text',
+            label: 'Telefono *',
+            validate: new RegExp(/^[0-9]{9}$/),
+            required: true,
+            error: false,
+            mensaje: '',
+            value: '',
+        },
+        {
+            name: 'email',
+            type: 'text',
+            label: 'E-Mail *',
+            validate: new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/),
+            required: true,
+            error: false,
+            mensaje: '',
+            value: '',
+        },
+    ],
+    buttons: [
+        {
+            name: 'Guardar',
+            action: '',
+            disabled: true
+        },
+    ],
+};
