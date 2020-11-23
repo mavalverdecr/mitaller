@@ -143,6 +143,7 @@ export const ApplProvider = (props) => {
     }
 
     const logout = () => {
+        setError('')
         setUsuario({});
         localStorage.removeItem('token')
         setIsLogged(false); 

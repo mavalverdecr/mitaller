@@ -31,7 +31,7 @@ const MessageBar = () => {
 
     useEffect(() => {
         setOpenMessageBar(() => (status && error ? true : false))
-    }, [status,error])
+    }, [error])
 
     return (
         <div className={classes.message}>

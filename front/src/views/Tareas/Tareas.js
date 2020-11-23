@@ -64,6 +64,7 @@ const Tareas = () => {
                             <TarjetaTarea 
                                 key={tarea._id}
                                 tarea={tarea}
+                                tareas={tareas}
                                 setTareas={setTareas}
                             />
                         ))
@@ -78,6 +79,8 @@ const Tareas = () => {
                             <TarjetaTarea 
                                 key={tarea._id}
                                 tarea={tarea}
+                                tareas={tareas}
+                                setTareas={setTareas}                                
                             />
                         ))
                     }                             
@@ -91,6 +94,8 @@ const Tareas = () => {
                             <TarjetaTarea 
                                 key={tarea._id}
                                 tarea={tarea}
+                                tareas={tareas}
+                                setTareas={setTareas}                                
                             />
                         ))
                     }                       

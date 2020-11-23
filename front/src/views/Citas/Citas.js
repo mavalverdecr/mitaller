@@ -35,13 +35,15 @@ const Citas = () => {
     const [fechaIni, setFechaIni] = useState(
         () => {
             const fechaHoy = new Date(Date.now())
-            return new Date(fechaHoy.getTime() - ((fechaHoy.getDay() - 1) * 1000 * 60 * 60 * 24));
+            const fechaInicioSem = new Date(fechaHoy.getTime() - ((fechaHoy.getDay() - 1) * 1000 * 60 * 60 * 24));
+            return new Date(fechaInicioSem.getFullYear(),fechaInicioSem.getMonth(),fechaInicioSem.getDate(),1,0,0) 
         }
     );
     const [fechaFin, setFechaFin] = useState(
         () => {
             const fechaHoy = new Date(Date.now())
-            return new Date(fechaHoy.getTime() + ((5 - fechaHoy.getDay()) * 1000 * 60 * 60 * 24));
+            const fechaFinSem = new Date(fechaHoy.getTime() + ((5 - fechaHoy.getDay()) * 1000 * 60 * 60 * 24));
+            return new Date(fechaFinSem.getFullYear(),fechaFinSem.getMonth(),fechaFinSem.getDate(),24,59,59) 
         }
     );
     const [citas, setCitas] = useState([]);

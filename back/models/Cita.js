@@ -16,6 +16,10 @@ const CitaSchema = mongoose.Schema({
     diaSemana: {
         type: Number,
         required: true
+    }, 
+    estado: {
+        type: Number,
+        required: true
     } 
 })
 

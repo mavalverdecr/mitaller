@@ -43,14 +43,11 @@ const FormLogin = () => {
     const [usuario, setUsuario] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleChangeUsu = e => {
-        setUsuario(e.target.value)
-    }
+    const handleOnChange = e => {    
+        if (e.target.name === "usuario") setUsuario(e.target.value)
+        if (e.target.name === "password") setPassword(e.target.value)
+    } 
     
-    const handleChangePass = e => {
-        setPassword(e.target.value)
-    }
-
     //Manejador del click en login
     const handleOnClick = async e => {
         e.preventDefault()
@@ -58,39 +55,39 @@ const FormLogin = () => {
             await login(usuario, password);
         } catch {}
     }    
+
     return (
         <div>
             <Typography component="h1" variant="h5">
                 Login
             </Typography>
             <form className={classes.form} noValidate autoComplete="off">
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="usuario"
-                    label="Usuario"
-                    name="usuario"
-                    autoComplete="usuario"
+                <TextField 
                     autoFocus
-                    value={usuario}
-                    onChange={handleChangeUsu}
-                />
-                <TextField
+                    name="usuario"
+                    id="usuario"
                     variant="outlined"
                     margin="normal"
                     required
+                    label="Usuario"
+                    type="text"
                     fullWidth
+                    onChange={handleOnChange}  
+                    value={usuario}
+                    />
+                <TextField 
                     name="password"
-                    label="Contraseña"
-                    type="password"
                     id="password"
-                    autoComplete="current-password"
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    label="Password"
+                    type="password"
+                    fullWidth
+                    onChange={handleOnChange}  
                     value={password}
-                    onChange={handleChangePass}
                 />
-                <Button
+                <Button 
                     type="submit"
                     fullWidth
                     variant="contained"
@@ -99,13 +96,11 @@ const FormLogin = () => {
                     onClick={handleOnClick}
                     disabled={loading}
                 >
-                    Acceder
+                    ACCEDER
                 </Button>
                 <Typography>
                     {"¿Todavía no tiene cuenta? "}           
-                    <RouterLink 
-                        to={'/signup'} 
-                    >
+                    <RouterLink to={'/signup'}>
                         {"Regístrate"}
                     </RouterLink>
                 </Typography>
@@ -121,11 +116,11 @@ const Login = () => {
 
     return (
         <div>
-            <Container className={classes.root} maxWidth="lg">
+            <Container className={classes.root} maxWidth="sm">
                 <Grid container spacing={3}>
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={12}>
                         <Paper className={classes.paper}>
-                            <FormLogin classes />
+                            <FormLogin />
                         </Paper>
                     </Grid>
                 </Grid>

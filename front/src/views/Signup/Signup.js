@@ -13,7 +13,9 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1
+      flexGrow: 1,
+      paddingTop: 50,
+      padding: theme.spacing(3),
     },
     paper: {
       padding: theme.spacing(2),
@@ -21,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.text.secondary
     },
     button: {
-        margin: theme.spacing(1),
+        margin: theme.spacing(3, 0, 2),
     },
   }));
 
@@ -68,7 +70,7 @@ const Signup = () => {
         } catch {}
     }
     return (
-        <Container maxWidth="md" className={classes.root} >
+        <Container maxWidth="sm" className={classes.root} >
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <Paper className={classes.paper}> 
@@ -174,9 +176,7 @@ const Signup = () => {
                             </Button>
                             <Typography>
                                 {"¿Ya tienes una cuenta? "}           
-                                <RouterLink 
-                                    to={'/login'} 
-                                >
+                                <RouterLink to={'/login'}>
                                     {"Accede"}
                                 </RouterLink>
                             </Typography> 

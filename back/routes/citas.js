@@ -45,7 +45,8 @@ router.post('/', verifyToken, async (req, res) => {
         matricula: req.body.matricula,
         descripcion: req.body.descripcion,
         fecha: new Date(req.body.fecha+'T'+req.body.hora),
-        diaSemana: 0
+        diaSemana: 0,
+        estado: 1
     }); 
 
     cita.diaSemana = cita.fecha.getDay();
@@ -88,7 +89,8 @@ router.patch('/:citaID', verifyToken, async (req, res) => {
             matricula: req.body.matricula,
             descripcion: req.body.descripcion,
             fecha: req.body.fecha,
-            diaSemana: 0
+            diaSemana: 0,
+            estado: req.body.estado
         }
         cita.diaSemana = cita.fecha.getDay();
         console.log('Actualizo cita: ',cita)

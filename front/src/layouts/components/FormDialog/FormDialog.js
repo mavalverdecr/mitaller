@@ -3,7 +3,6 @@ import React from 'react';
 import { useAppl } from '../../../context/ApplContext';
 
 //Material-UI
-import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';

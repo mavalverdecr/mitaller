@@ -21,10 +21,10 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const TarjetaTarea = (props) => {
+const TarjetaTarea = props => {
     const classes = useStyles();
     const [tarea,setTarea] = useState(props.tarea);
-
+    const {tareas,setTareas} = props;
     const {setLoading, setError, setStatus, token} = useAppl();
 
     const avanzarTarea = async () => {
@@ -44,6 +44,9 @@ const TarjetaTarea = (props) => {
             ...tarea,
             estado: tarea.estado + 1
           })
+          setTareas(tareas.map(t=>(
+            t._id === tarea._id ? {...tarea, estado: tarea.estado + 1} : t
+          )))
           //setStatus(res.status);
           setError(res.data.mensaje);
       } catch(err) {
@@ -75,6 +78,9 @@ const TarjetaTarea = (props) => {
             ...tarea,
             estado: tarea.estado - 1
           })
+          setTareas(tareas.map(t=>(
+            t._id === tarea._id ? {...tarea, estado: tarea.estado - 1} : t
+          )))
           //setStatus(res.status);
           setError(res.data.mensaje);
       } catch(err) {
